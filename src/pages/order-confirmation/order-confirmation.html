@@ -9,6 +9,7 @@
 
 <ion-content padding>
 
+  <div *ngIf="!codpedido">
   <ion-card>
     <ion-card-header>
       Itens do pedido
@@ -70,5 +71,18 @@
 
   <button ion-button block (click)="checkout()">Confirmar pedido</button>
   <button ion-button block outline (click)="back()">Voltar</button>
+</div>
+
+  <div *ngIf="codpedido">
+    <ion-card>
+      <ion-card-header>
+        Seu pedido foi registrado!
+      </ion-card-header>
+      <ion-item>
+        <h2>Verifique seu email</h2>
+      </ion-item>
+      <button ion-button block outline (click)="home()">Voltar</button>
+    </ion-card>
+  </div>
 
 </ion-content>
